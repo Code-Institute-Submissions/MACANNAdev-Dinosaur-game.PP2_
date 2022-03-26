@@ -35,6 +35,11 @@ body {
    transform:rotateY(180deg);
 
 }
+
+.memory-card.removeCard {
+    visibility: hidden;
+}
+
 .front-face,
 .back-face {
     width :100%;
@@ -44,6 +49,7 @@ body {
     border: 2px solid rgb(255 229 0);
     background: #f6c911;
     backface-visibility: hidden;
+    
 
 }
 .front-face{
