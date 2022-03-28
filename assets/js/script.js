@@ -3,6 +3,7 @@ const cards = document.querySelectorAll('.memory-card');
 let hasFlippedCard = false;
 let lockBoard = true;
 let firstCard, secondCard;
+let time = parseInt(document.getElementById('timer').innerText);
 
 function startGame(){
  lockBoard = false;
@@ -75,16 +76,18 @@ function flipCounter(){
   document.getElementById('flips').innerText = ++flipCounter;
 
 }
-/*
+
 function beginTimer(){
-  let beginTimer = parseInt(document.getElementById('timer').innerText);
-
-  if(beginTimer === 0){ stopGame()
-
   
-  setInterval(function(){ document.getElementById('timer').innerText = --beginTimer;
+
+  setInterval(function(){if(time === 0){ 
+    stopGame();
+    clearInterval();
+  }
+  
+    --time;
 },1000);
-}*/
+}
 
 
 
