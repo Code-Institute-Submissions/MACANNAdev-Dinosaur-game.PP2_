@@ -1,4 +1,9 @@
 /* --Global styles */
+@font-face {
+    font-family: 'Immortal';
+    src:  url('../fonts/IMMORTAL.ttf') format('woff2'),
+          url('../fonts/IMMORTAL.ttf') format('woff');
+  }
 * {
     padding: 0;
     margin:0;
@@ -10,7 +15,6 @@ body {
     background:#afdf9f;
 }
 .landing-bg-image {
-    
     background: url('../images/dinosaur-front-page.jpg');
     background-size: cover;
     background-position: center;
@@ -27,9 +31,38 @@ body {
     border-bottom: 1px solid #333333;
     border-left: 1px solid #CCCCCC;
     position: absolute;
-    left: 10%;
+    right: 10%;
+    bottom: 26%;
     padding: 30px;
   }
+#instructions{
+    font-family:Immortal;
+    font-size: 20px;
+    position: absolute;
+    left:5%;
+    bottom:5%; 
+}
+#play{
+    font-family:Immortal;
+    font-size: 20px;
+    position: absolute;
+    right:5%;
+    bottom:5%; 
+}
+#timer{
+    font-family:Immortal;
+    font-size: 20px;
+    position: absolute;
+    left:5%;
+    top:5%; 
+}
+#flips{
+    font-family:Immortal;
+    font-size: 20px;
+    position: absolute;
+    right:5%;
+    top:5%; 
+}
 .memory-game{
     width: 550px;
     height: 550px;
