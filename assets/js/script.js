@@ -1,8 +1,14 @@
 const cards = document.querySelectorAll('.memory-card');
 
 let hasFlippedCard = false;
-let lockBoard = false;
+let lockBoard = true;
 let firstCard, secondCard;
+
+function startGame(){
+ lockBoard = false;
+ beginTimer()
+
+}
 
 function flipCard() {
   if(lockBoard) return;
@@ -13,6 +19,7 @@ function flipCard() {
     // first click
     hasFlippedCard = true;
     firstCard = this;
+    flipCounter();
 
     return;
   }
@@ -22,6 +29,7 @@ function flipCard() {
   secondCard = this;
 
   checkForMatch();
+  flipCounter();
 }
 
 function checkForMatch() {
@@ -62,5 +70,27 @@ function unflipCards() {
 
 }) ()
 
+function flipCounter(){
+  let flipCounter = parseInt(document.getElementById('flips').innerText);
+  document.getElementById('flips').innerText = ++flipCounter;
 
+}
+/*
+function beginTimer(){
+  let beginTimer = parseInt(document.getElementById('timer').innerText);
+
+  if(beginTimer === 0){ stopGame()
+
+  
+  setInterval(function(){ document.getElementById('timer').innerText = --beginTimer;
+},1000);
+}*/
+
+
+
+function stopGame (){
+
+}
+
+document.getElementById('play').addEventListener('click', startGame)
 cards.forEach(card => card.addEventListener('click', flipCard));
