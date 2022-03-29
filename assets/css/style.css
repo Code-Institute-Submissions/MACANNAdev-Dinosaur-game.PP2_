@@ -63,6 +63,20 @@ body {
     right:5%;
     top:5%; 
 }
+#game-over {
+    display:none;
+    font-family:Immortal;
+    font-size: 20px;
+}
+#winner{
+   /* display:none;*/
+    font-family:Immortal;
+    font-size: 20px;
+}
+#winner.visible{
+    display: flex;
+}
+
 .memory-game{
     width: 550px;
     height: 550px;
@@ -90,9 +104,7 @@ body {
 
 }
 
-.memory-card.removeCard {
-    visibility: hidden;
-}
+
 
 .front-face,
 .back-face {

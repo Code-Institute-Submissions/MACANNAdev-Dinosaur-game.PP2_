@@ -31,6 +31,7 @@ function flipCard() {
 
   checkForMatch();
   flipCounter();
+  allFlipped();
 }
 
 function checkForMatch() {
@@ -38,16 +39,17 @@ function checkForMatch() {
 
   isMatch ? disableCards() : unflipCards();
 
+
+ // if isMatch increment 1. if increment = 8 win function()
  
 }
+
 
 function disableCards() {
   firstCard.removeEventListener('click', flipCard);
   secondCard.removeEventListener('click', flipCard);
 
-   
-  firstCard.classList.add('removeCard');
-  secondCard.classList.add('removeCard');
+  
 }
 
 
@@ -59,41 +61,27 @@ function unflipCards() {
       lockBoard = false;
     }, 1500);
 }
-
-
+/*
 (function shuffle () {
   cards.forEach( card => { 
      let randomPos = Math.floor(Math.random() * 16);
      card.style.order = randomPos;
      });
 
-}) ()
+}) ()*/
 
 function flipCounter(){
   let flipCounter = parseInt(document.getElementById('flips').innerText);
   document.getElementById('flips').innerText = ++flipCounter;
 
 }
-/*
-function beginTimer(){
-  interval = setInterval(function () {
-    document.getElementById('timer').innerHTML = seconds;
-    if (--seconds < 0) clearInterval(interval);
-}, 1000);
+function allFlipped() {
+  let flippedCards = document.querySelectorAll('.memory-card.flip');
+  console.log(flippedCards.length);
+  if (flippedCards.length === 16){
+    winner();
+  }
 }
-
- function beginTimer () {
-
-   setInterval(() => {
-       --time;
-       document.getElementById('timer') = timeRemaining;
-
-       if (timeRemaining === 0) {
-         stopGame();
-
-
-       } 1000;
-     });}*/
 
 function startCounter(){
  var counter = 100;
@@ -106,12 +94,40 @@ function startCounter(){
        if (counter === 0) {
          
          clearInterval(countdown);
+         
        }
      }, 1000);
 
 }
+function gameOver(){
+  document.getElementById('game-over').classList.add('visible');
+}
 
 
+function winner(){
+  document.getElementById('winner').classList.add('visible');
+  let finalScore = document.getElementById('timer').innerHTML;
+}
 
 document.getElementById('play').addEventListener('click', startGame)
 cards.forEach(card => card.addEventListener('click', flipCard));
+
+document.getElementById('email-btn').addEventListener('click', sendScoreEmail)
+
+function sendScoreEmail() {
+  const to_email = document.getElementById('email').value;
+  var score = document.getElementById('timer').innerText;
+  var templateParams = {
+    to_email:to_email,
+    score:score
+   
+  };
+  emailjs.send('service_cxn0bsp', 'template_f7gsd8s', templateParams)
+    .then(function(response) {
+      console.log('SUCCESS!', response.status, response.text);
+    }, function(error) {
+      console.log('FAILED...', error);
+    });
+
+
+}
