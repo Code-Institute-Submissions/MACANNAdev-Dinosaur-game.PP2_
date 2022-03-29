@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+
     <link rel="stylesheet" href="assets/css/style.css">
 
     <title>Dinosaur-Seek</title>
@@ -95,7 +96,26 @@
         Instructions
       </div>
 
-    
+      <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+      <script type="text/javascript">
+          (function() {
+              // https://dashboard.emailjs.com/admin/integration
+              emailjs.init('RA8wBRG7IcW678zQC');
+          })();
+          var templateParams = {
+    to_name: 'xyz',
+    from_name: 'abc'
+   
+  };
+
+  /*emailjs.send('service_cxn0bsp', 'template_f7gsd8s', templateParams)
+    .then(function(response) {
+      console.log('SUCCESS!', response.status, response.text);
+    }, function(error) {
+      console.log('FAILED...', error);
+    });*/
+      </script>
     <script src="assets/js/script.js"></script>
+    
 </body>
 </html>
