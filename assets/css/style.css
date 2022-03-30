@@ -68,8 +68,11 @@ body {
     font-family:Immortal;
     font-size: 20px;
 }
+#game-over.visible {
+    display:flex;
+}
 #winner{
-   /* display:none;*/
+    display:none;
     font-family:Immortal;
     font-size: 20px;
 }

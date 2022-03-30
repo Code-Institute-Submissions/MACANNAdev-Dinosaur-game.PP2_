@@ -39,8 +39,6 @@ function checkForMatch() {
 
   isMatch ? disableCards() : unflipCards();
 
-
- // if isMatch increment 1. if increment = 8 win function()
  
 }
 
@@ -61,15 +59,15 @@ function unflipCards() {
       lockBoard = false;
     }, 1500);
 }
-/*
-(function shuffle () {
+
+/*(function shuffle () {
   cards.forEach( card => { 
      let randomPos = Math.floor(Math.random() * 16);
      card.style.order = randomPos;
      });
 
-}) ()*/
-
+}) ()
+*/
 function flipCounter(){
   let flipCounter = parseInt(document.getElementById('flips').innerText);
   document.getElementById('flips').innerText = ++flipCounter;
@@ -77,9 +75,10 @@ function flipCounter(){
 }
 function allFlipped() {
   let flippedCards = document.querySelectorAll('.memory-card.flip');
-  console.log(flippedCards.length);
   if (flippedCards.length === 16){
+    lockBoard = true;
     winner();
+    
   }
 }
 
@@ -90,10 +89,15 @@ function startCounter(){
        console.log(counter);
        counter--
        document.getElementById('timer').innerHTML = counter;
+       if(lockBoard) {
+        clearInterval(countdown);
+
+       }
 
        if (counter === 0) {
-         
+        gameOver();
          clearInterval(countdown);
+         
          
        }
      }, 1000);
@@ -106,7 +110,6 @@ function gameOver(){
 
 function winner(){
   document.getElementById('winner').classList.add('visible');
-  let finalScore = document.getElementById('timer').innerHTML;
 }
 
 document.getElementById('play').addEventListener('click', startGame)
@@ -116,7 +119,10 @@ document.getElementById('email-btn').addEventListener('click', sendScoreEmail)
 
 function sendScoreEmail() {
   const to_email = document.getElementById('email').value;
-  var score = document.getElementById('timer').innerText;
+  var timerScore = document.getElementById('timer').innerText;
+  var flipScore = document.getElementById('flips').innerText;
+  var score =  timerScore - flipScore;
+
   var templateParams = {
     to_email:to_email,
     score:score
