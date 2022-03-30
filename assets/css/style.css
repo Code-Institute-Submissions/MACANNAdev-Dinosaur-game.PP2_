@@ -35,46 +35,15 @@ body {
     bottom: 26%;
     padding: 30px;
   }
-  /*
-#instructions{
-    font-family:Immortal, serif;
-    font-size: 20px;
-    
-}
+
 #play{
     font-family:Immortal,serif;
-    font-size: 20px;
+    font-size: 2em;
+    text-align: center;
+    
     
 }
 
-#timer{
-    font-family:Immortal,serif;
-    font-size: 20px;
-    
-}
-#flips{
-    font-family:Immortal, serif;
-    font-size: 20px;
-    
-}
-
-#game-over {
-    display:none;
-    font-family:Immortal;
-    font-size: 20px;
-}
-#game-over.visible {
-    display:flex;
-}
-#winner{
-    display:none;
-    font-family:Immortal;
-    font-size: 20px;
-}
-#winner.visible{
-    display: flex;
-}
-*/
 
 .foreground-text {
     display: none;
@@ -96,6 +65,7 @@ body {
 }
 
 #instructions-text {
+    font-size: 2em;
     margin-left: 33%;
     margin-right: 33%;
     text-align: center;
@@ -135,8 +105,8 @@ body {
 
 }
 .memory-card{
-    width:160px;
-    height: 125px;
+    width:100px;
+    height: 85px;
     margin: 5px;
     position: relative;
     transform: scale(1);

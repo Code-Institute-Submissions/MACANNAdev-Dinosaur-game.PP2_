@@ -17,25 +17,13 @@
   </div>
 
   <div  class="foreground-text" id = "winner"> Winner 
-    <label for="email">Enter your email:</label>a
+    <label for="email">Enter your email:</label>
     <button id = "email-btn">Send score</button>
     <input type="email" id="email" name="email">
 
     <span id="foreground-text-small1">Click to Restart</span>
   </div>
-  <div style="display:none;" id ="instructions-info">
-    
-      <p>Press play to start game </p>
-      <br>
-      <p>Click cards to flip</p>
-      <br>
-      <p>Match cards with the same image within time limit</p>
-      <br>
-      <p> Recieve score via email</p>
-      <br>
-      <p>Go again!!!</p>
-    
-    </div>   
+  
   
   <div class="memory-game">
      <div class ="game-info-container">
@@ -117,17 +105,17 @@
             <img class="front-face" src="assets/images/rhamphophynchus.jpg" alt="Rhamphophynchus" />
             <img class="back-face" src="assets/images/fossil-backside.png" alt="Fossil" />
           </div>
-          <div class ="game-info-container">
-          <div class ="game-info" id="play" >Play</div>
-      
-          
-            
-              
-          
-        </div>
+
+         
         
         </div>
-             
+
+        
+            
+        <div id="play" >Play</div>
+        
+          <br>
+
         <div id ="instructions-text">
     
           <p>Press play to start game </p>
@@ -153,12 +141,7 @@
    
   };
 
-  /*emailjs.send('service_cxn0bsp', 'template_f7gsd8s', templateParams)
-    .then(function(response) {
-      console.log('SUCCESS!', response.status, response.text);
-    }, function(error) {
-      console.log('FAILED...', error);
-    });*/
+  
       </script>
     <script src="assets/js/script.js"></script>
     

@@ -63,14 +63,14 @@ function unflipCards() {
     }, 1500);
 }
 
-/*(function shuffle () {
+(function shuffle () {
   cards.forEach( card => { 
      let randomPos = Math.floor(Math.random() * 16);
      card.style.order = randomPos;
      });
 
 }) ()
-*/
+
 function flipCounter(){
   let flipCounter = parseInt(document.getElementById('flips').innerText);
   document.getElementById('flips').innerText = ++flipCounter;
@@ -116,10 +116,6 @@ function gameOver(){
 function winner(){
   document.getElementById('winner').classList.add('visible');
 }
-/*
-function displayInstructions (){
-  document.getElementById('instructions-info').classList.add('visible');
-} */
 
 function startAgain() {
   location.reload() 
@@ -155,13 +151,3 @@ document.getElementById('email-btn').addEventListener('click', sendScoreEmail)
 document.getElementById('foreground-text-small1').addEventListener('click', startAgain)
 document.getElementById('foreground-text-small2').addEventListener('click', startAgain)
 
-
-
-
-/*document.getElementById('instructions').addEventListener('click', displayInstructions) 
-
-
-function myFunction() {
-  var element = document.getElementById("instructions-info");
-  element.classList.toggle("instructions-text");
-} */
