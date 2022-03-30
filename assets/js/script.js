@@ -103,6 +103,7 @@ function startCounter(){
      }, 1000);
 
 }
+
 function gameOver(){
   document.getElementById('game-over').classList.add('visible');
 }
@@ -111,11 +112,10 @@ function gameOver(){
 function winner(){
   document.getElementById('winner').classList.add('visible');
 }
+function displayInstructions (){
+  document.getElementById('instructions-info').classList.add('visible');
+}
 
-document.getElementById('play').addEventListener('click', startGame)
-cards.forEach(card => card.addEventListener('click', flipCard));
-
-document.getElementById('email-btn').addEventListener('click', sendScoreEmail)
 
 function sendScoreEmail() {
   const to_email = document.getElementById('email').value;
@@ -137,3 +137,10 @@ function sendScoreEmail() {
 
 
 }
+
+document.getElementById('play').addEventListener('click', startGame)
+cards.forEach(card => card.addEventListener('click', flipCard));
+
+document.getElementById('email-btn').addEventListener('click', sendScoreEmail)
+
+document.getElementById('instructions').addEventListener('click', displayInstructions)

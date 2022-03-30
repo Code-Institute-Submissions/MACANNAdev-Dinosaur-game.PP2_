@@ -10,9 +10,9 @@
     box-sizing: border-box;
 }
 body {
-    height :100vh;
-    display: flex;
+    
     background:#afdf9f;
+    
 }
 .landing-bg-image {
     background: url('../images/dinosaur-front-page.jpg');
@@ -35,34 +35,29 @@ body {
     bottom: 26%;
     padding: 30px;
   }
+  /*
 #instructions{
-    font-family:Immortal;
+    font-family:Immortal, serif;
     font-size: 20px;
-    position: absolute;
-    left:5%;
-    bottom:5%; 
+    
 }
 #play{
-    font-family:Immortal;
+    font-family:Immortal,serif;
     font-size: 20px;
-    position: absolute;
-    right:5%;
-    bottom:5%; 
+    
 }
+
 #timer{
-    font-family:Immortal;
+    font-family:Immortal,serif;
     font-size: 20px;
-    position: absolute;
-    left:5%;
-    top:5%; 
+    
 }
 #flips{
-    font-family:Immortal;
+    font-family:Immortal, serif;
     font-size: 20px;
-    position: absolute;
-    right:5%;
-    top:5%; 
+    
 }
+
 #game-over {
     display:none;
     font-family:Immortal;
@@ -79,19 +74,45 @@ body {
 #winner.visible{
     display: flex;
 }
+*/
 
-.memory-game{
-    width: 550px;
-    height: 550px;
-    margin: auto;
+.foreground-text {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+    font-family: Immortal, serif;
+  }
+  .foreground-text.visible {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
+  }
+.game-info-container{
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: space-between;
+}
+.game-info {
+    font-family: Immortal, serif;
+    font-size:2em;
+}
+.memory-game{
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    grid-gap: 10px;
+    margin: 50px;
+    justify-content: center;
     perspective: 1000px;
 
 }
 .memory-card{
-    width:calc(25% - 10px);
-    height: auto;
+    width:160px;
+    height: 125px;
     margin: 5px;
     position: relative;
     transform: scale(1);
@@ -124,3 +145,19 @@ body {
 .front-face{
     transform: rotateY(180deg);
 }
+#instructions-info{
+    display: none;
+}
+#instructions-info.visible{
+    display: flex;
+}
+@media (max-width: 600px) {
+    .memory-game {
+      grid-template-columns: repeat(2, auto);
+    }
+  
+    .game-info-container {
+      flex-direction: column;
+      align-items: center;
+    }
+  }

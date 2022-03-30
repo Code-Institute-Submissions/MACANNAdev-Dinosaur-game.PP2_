@@ -12,16 +12,40 @@
 </head>
 <body>
 
-  <div id = "game-over">Game Over</div>
+  <div class="foreground-text" id = "game-over">Game Over
+     <span class="foreground-text-small">Click to Restart</span>
+  </div>
 
-  <div id = "winner"> Winner 
+  <div  class="foreground-text" id = "winner"> Winner 
     <label for="email">Enter your email:</label>
     <button id = "email-btn">Send score</button>
     <input type="email" id="email" name="email">
+    <span class="foreground-text-small">Click to Restart</span>
   </div>
+  <div class ="foreground-text" id ="instructions-info">
+    
+      <p>Press play to start game </p>
+      <br>
+      <p>Click cards to flip</p>
+      <br>
+      <p>Match cards with the same image within time limit</p>
+      <br>
+      <p> Recieve score via email</p>
+      <br>
+      <p>Go again!!!</p>
+    
+    </div>   
   
-    <section class="memory-game">
-        <div class="memory-card" data-framework = "trex">
+  <div class="memory-game">
+     <div class ="game-info-container">
+     <div class ="game-info">
+        Flips: <span id = "flips">0</span> 
+      </div>
+      <div class ="game-info">
+        Timer: <span id = "timer"> 100</span>
+       </div>
+      </div>
+      <div class="memory-card" data-framework = "trex">
           <img class="front-face" src="assets/images/trex.jpg" alt="T-rex" />
           <img class="back-face" src="assets/images/fossil-backside.png" alt="Fossil" />
         </div>
@@ -92,19 +116,16 @@
             <img class="front-face" src="assets/images/rhamphophynchus.jpg" alt="Rhamphophynchus" />
             <img class="back-face" src="assets/images/fossil-backside.png" alt="Fossil" />
           </div>
-          
-      </section>
-      <div id="play" >Play</div>
-      <div >
-        Flips: <span id = "flips">0</span> 
-      </div>
-      <div">
-        Timer: <span id = "timer"> 100</span>
-      </div>
-      <div id = "instructions">
-        Instructions
-      </div>
-
+          <div class ="game-info-container">
+          <div class ="game-info" id="play" >Play</div>
+      
+          <div class ="game-info"  id = "instructions">
+            Instructions
+          </div> 
+        </div>
+        </div>
+             
+     
       <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
       <script type="text/javascript">
           (function() {
