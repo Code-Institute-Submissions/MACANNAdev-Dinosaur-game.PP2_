@@ -98,7 +98,7 @@ body {
 #instructions-text {
     margin-left: 33%;
     margin-right: 33%;
-    justify-content: center;
+    text-align: center;
     font-family: Immortal, serif;
     
   }

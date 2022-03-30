@@ -3,11 +3,13 @@ const cards = document.querySelectorAll('.memory-card');
 let hasFlippedCard = false;
 let lockBoard = true;
 let firstCard, secondCard;
+let stopCount = false;
 
 
 function startGame(){
  lockBoard = false;
  startCounter();
+ 
  document.getElementById('play').removeEventListener('click',startGame);
 
 }
@@ -78,6 +80,7 @@ function allFlipped() {
   let flippedCards = document.querySelectorAll('.memory-card.flip');
   if (flippedCards.length === 16){
     lockBoard = true;
+    stopCount = true;
     winner();
     
   }
@@ -90,7 +93,7 @@ function startCounter(){
        console.log(counter);
        counter--
        document.getElementById('timer').innerHTML = counter;
-       if(lockBoard) {
+       if(stopCount) {
         clearInterval(countdown);
 
        }
@@ -118,6 +121,10 @@ function displayInstructions (){
   document.getElementById('instructions-info').classList.add('visible');
 } */
 
+function startAgain() {
+  location.reload() 
+
+}
 
 function sendScoreEmail() {
   const to_email = document.getElementById('email').value;
@@ -144,6 +151,12 @@ document.getElementById('play').addEventListener('click', startGame)
 cards.forEach(card => card.addEventListener('click', flipCard));
 
 document.getElementById('email-btn').addEventListener('click', sendScoreEmail)
+
+document.getElementById('foreground-text-small1').addEventListener('click', startAgain)
+document.getElementById('foreground-text-small2').addEventListener('click', startAgain)
+
+
+
 
 /*document.getElementById('instructions').addEventListener('click', displayInstructions) 
 
