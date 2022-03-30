@@ -22,7 +22,7 @@
     <input type="email" id="email" name="email">
     <span class="foreground-text-small">Click to Restart</span>
   </div>
-  <div class ="foreground-text" id ="instructions-info">
+  <div style="display:none;" id ="instructions-info">
     
       <p>Press play to start game </p>
       <br>
@@ -119,13 +119,27 @@
           <div class ="game-info-container">
           <div class ="game-info" id="play" >Play</div>
       
-          <div class ="game-info"  id = "instructions">
-            Instructions
-          </div> 
+          
+            
+              
+          
         </div>
+        
         </div>
              
-     
+        <div id ="instructions-text">
+    
+          <p>Press play to start game </p>
+          <br>
+          <p>Click cards to flip</p>
+          <br>
+          <p>Match cards with the same image within time limit</p>
+          <br>
+          <p> Recieve score via email</p>
+          <br>
+          <p>Go again!!!</p>
+        
+        </div>
       <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
       <script type="text/javascript">
           (function() {

@@ -87,11 +87,35 @@ body {
     align-items: center;
     z-index: 100;
     font-family: Immortal, serif;
+    color:aqua
   }
   .foreground-text.visible {
     display: flex;
     flex-direction: column;
+    animation: foreground-grow 500ms forwards;
+}
+
+#instructions-text {
+    margin-left: 33%;
+    margin-right: 33%;
+    justify-content: center;
+    font-family: Immortal, serif;
+    
   }
+  
+
+
+@keyframes foreground-grow {
+  from {
+    background-color: rgba(0, 0, 0, 0);
+    font-size: 0;
+  }
+  to {
+    background-color: rgba(0, 0, 0, .8);
+    font-size: 1em;
+  }
+}
+
 .game-info-container{
   grid-column: 1 / -1;
   display: flex;
@@ -145,12 +169,9 @@ body {
 .front-face{
     transform: rotateY(180deg);
 }
-#instructions-info{
-    display: none;
-}
-#instructions-info.visible{
-    display: flex;
-}
+
+
+
 @media (max-width: 600px) {
     .memory-game {
       grid-template-columns: repeat(2, auto);

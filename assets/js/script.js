@@ -8,6 +8,7 @@ let firstCard, secondCard;
 function startGame(){
  lockBoard = false;
  startCounter();
+ document.getElementById('play').removeEventListener('click',startGame);
 
 }
 
@@ -112,9 +113,10 @@ function gameOver(){
 function winner(){
   document.getElementById('winner').classList.add('visible');
 }
+/*
 function displayInstructions (){
   document.getElementById('instructions-info').classList.add('visible');
-}
+} */
 
 
 function sendScoreEmail() {
@@ -143,4 +145,10 @@ cards.forEach(card => card.addEventListener('click', flipCard));
 
 document.getElementById('email-btn').addEventListener('click', sendScoreEmail)
 
-document.getElementById('instructions').addEventListener('click', displayInstructions)
+/*document.getElementById('instructions').addEventListener('click', displayInstructions) 
+
+
+function myFunction() {
+  var element = document.getElementById("instructions-info");
+  element.classList.toggle("instructions-text");
+} */
