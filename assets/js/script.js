@@ -62,7 +62,7 @@ function unflipCards() {
       lockBoard = false;
     }, 1500);
 }
-/*
+
 (function shuffle () {
   cards.forEach( card => { 
      let randomPos = Math.floor(Math.random() * 16);
@@ -70,7 +70,7 @@ function unflipCards() {
      });
 
 }) ()
-*/
+
 function flipCounter(){
   let flipCounter = parseInt(document.getElementById('flips').innerText);
   document.getElementById('flips').innerText = ++flipCounter;
