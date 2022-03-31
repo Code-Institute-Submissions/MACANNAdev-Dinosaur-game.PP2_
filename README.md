@@ -3,7 +3,7 @@
 [View the live project here.](https://macannadev.github.io/Dinosaur-game.PP2/)
 
 Dinosaur Seek is a card matching game designed for dinosaur enthusiasts
-<h2 align="center"><img src="readme-files/readme-images/website.jpg"></h2>
+<h2 align="center"><img src="readme-images/website.png"></h2>
 
 ## User Experience (UX)
 
