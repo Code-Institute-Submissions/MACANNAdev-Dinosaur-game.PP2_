@@ -186,7 +186,7 @@ Click [Here](https://help.github.com/en/github/creating-cloning-and-archiving-re
 
 - [Memory game tutorial 1](https://www.youtube.com/watch?v=ZniVgo8U7ek&ab_channel=freeCodeCamp.org)
 
-- [[Memory game tutorial 2](https://www.youtube.com/watch?v=3uuQ3g92oPQ)
+- [Memory game tutorial 2](https://www.youtube.com/watch?v=3uuQ3g92oPQ)
 
 - [Memory game tutorial 3](https://www.youtube.com/watch?v=-tlb4tv4mC4&ab_channel=DevEd)
 
